@@ -1,254 +1,268 @@
-// ==== CONFIGURE THESE WITH YOUR REAL EMAILJS VALUES ====
-const EMAILJS_PUBLIC_KEY = "WiZ9kfCMjXubU-hBb";
-const EMAILJS_SERVICE_ID = "service_mhqbdiq"; // if that's your real one
-const EMAILJS_TEMPLATE_ID = "template_3o5e5jh";
+// ===== EmailJS stuff (put your keys here) =====
+var EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY_HERE";   // e.g. "cF3p9x..."
+var EMAILJS_SERVICE_ID = "service_mhqbdiqro";      // you said this in chat
+var EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID_HERE"; // from EmailJS template
 
-// Initialize EmailJS
-if (typeof emailjs !== "undefined") {
-  emailjs.init(EMAILJS_PUBLIC_KEY);
+if (typeof emailjs !== "undefined" && EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY_HERE") {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
 }
 
-// PARALLAX BACKGROUND ---------------------------------------------
-const bg = document.getElementById("parallax-bg");
-document.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 16;
-  const y = (e.clientY / window.innerHeight - 0.5) * 16;
-  bg.style.transform = `translate(${x}px, ${y}px)`;
+// ===== parallax background =====
+var bg = document.getElementById("parallax-bg");
+document.addEventListener("mousemove", function (e) {
+    var x = (e.clientX / window.innerWidth - 0.5) * 16;
+    var y = (e.clientY / window.innerHeight - 0.5) * 16;
+    bg.style.transform = "translate(" + x + "px," + y + "px)";
 });
 
-// THEME TOGGLE -----------------------------------------------------
-const themeToggle = document.getElementById("theme-toggle");
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
-  themeToggle.textContent = document.body.classList.contains("light-mode")
-    ? "☀️"
-    : "🌙";
-});
-
-// SCROLL REVEAL ----------------------------------------------------
-const revealEls = document.querySelectorAll(".reveal");
-function handleReveal() {
-  const trigger = window.innerHeight * 0.85;
-  revealEls.forEach((el) => {
-    const top = el.getBoundingClientRect().top;
-    if (top < trigger) {
-      el.classList.add("show");
-      el.querySelectorAll(".fill").forEach((bar) => bar.classList.add("show"));
+// ===== theme toggle =====
+var themeBtn = document.getElementById("theme-toggle");
+themeBtn.addEventListener("click", function () {
+    document.body.classList.toggle("light-mode");
+    if (document.body.classList.contains("light-mode")) {
+        themeBtn.textContent = "☀️";
+    } else {
+        themeBtn.textContent = "🌙";
     }
-  });
+});
+
+// ===== scroll reveal =====
+var revealEls = document.querySelectorAll(".reveal");
+function doReveal() {
+    var trigger = window.innerHeight * 0.85;
+    revealEls.forEach(function (el) {
+        var top = el.getBoundingClientRect().top;
+        if (top < trigger) {
+            el.classList.add("show");
+            // also animate skill bars here
+            var bars = el.querySelectorAll(".fill");
+            bars.forEach(function (b) {
+                b.classList.add("show");
+            });
+        }
+    });
 }
-window.addEventListener("scroll", handleReveal);
-handleReveal();
+window.addEventListener("scroll", doReveal);
+doReveal();
 
-// DASHBOARD COUNTERS -----------------------------------------------
-const metricValues = document.querySelectorAll(".metric-value");
-metricValues.forEach((el) => {
-  const target = Number(el.dataset.target || "0");
-  let current = 0;
-  const step = Math.max(1, Math.floor(target / 80));
-  const interval = setInterval(() => {
-    current += step;
-    if (current >= target) {
-      current = target;
-      clearInterval(interval);
-    }
-    el.textContent = current.toLocaleString();
-  }, 30);
+// ===== dashboard numbers =====
+var metricEls = document.querySelectorAll(".metric-value");
+metricEls.forEach(function (el) {
+    var target = Number(el.getAttribute("data-target") || "0");
+    var current = 0;
+    var step = Math.max(1, Math.floor(target / 80));
+    var timer = setInterval(function () {
+        current += step;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        el.textContent = current.toLocaleString();
+    }, 30);
 });
 
-// DASHBOARD LIVE LOG SIMULATION ------------------------------------
-const logList = document.getElementById("log-list");
-const logMessages = [
-  "[INFO] New recon task queued for 10.0.1.24",
-  "[ALERT] Suspicious SSH login blocked from RU region",
-  "[SCAN] Netherworld scan completed on 192.168.1.0/24",
-  "[WARN] 14 weak passwords detected in test lab",
-  "[INFO] Redstrike brute-force simulation finished",
-  "[OK] Firewall rules synced for web segment",
+// ===== fake logs for dashboard =====
+var logBox = document.getElementById("log-list");
+var logLines = [
+    "[INFO] new recon task queued for 10.0.1.24",
+    "[ALERT] ssh login blocked from suspicious region",
+    "[SCAN] netherworld finished scan of 192.168.1.0/24",
+    "[WARN] 14 weak passwords found (lab only)",
+    "[INFO] redstrike brute-force test completed",
+    "[OK] firewall rules synced for web segment"
 ];
-let logIndex = 0;
-setInterval(() => {
-  if (!logList) return;
-  const li = document.createElement("li");
-  li.textContent = logMessages[logIndex % logMessages.length];
-  logIndex++;
-  logList.prepend(li);
-  if (logList.children.length > 8) {
-    logList.removeChild(logList.lastChild);
-  }
+var logIdx = 0;
+
+setInterval(function () {
+    if (!logBox) return;
+    var li = document.createElement("li");
+    li.textContent = logLines[logIdx % logLines.length];
+    logIdx++;
+    logBox.prepend(li);
+    if (logBox.children.length > 8) {
+        logBox.removeChild(logBox.lastChild);
+    }
 }, 2000);
 
-// TERMINAL SIMULATION ----------------------------------------------
-const termForm = document.getElementById("terminal-form");
-const termInput = document.getElementById("terminal-input");
-const termOutput = document.getElementById("terminal-output");
+// ===== typing animation in hero =====
+var typingEl = document.getElementById("typing");
+var typingLines = [
+    "Cybersecurity Enthusiast",
+    "Python & Java Developer",
+    "OSINT Learner",
+    "Security Tool Builder"
+];
+var lineIndex = 0;
+var charIndex = 0;
+var deleting = false;
 
-const commands = {
-  help: [
-    "available commands:",
-    "  about      - short bio",
-    "  projects   - list main projects",
-    "  skills     - quick tech stack",
-    "  clear      - clear screen",
-  ],
-  about: [
-    "Abhisar Ranger — cybersecurity enthusiast focused on automation & tooling.",
-    "Java & Python dev, OSINT learner, and security labs explorer.",
-  ],
-  projects: [
-    "- Netherworld : advanced port scanner with GEO + OS detection",
-    "- Redstrike   : CLI toolkit for recon, scanning & brute-force simulations",
-  ],
-  skills: [
-    "Languages: Java, Python",
-    "Practices: Cyber Security, DSA, OSINT",
-    "Tools: Git, GitHub, Linux, IoT, recon utilities",
-  ],
+// simple typing loop
+function typeLoop() {
+    if (!typingEl) return; // just in case
+
+    var txt = typingLines[lineIndex];
+
+    if (!deleting) {
+        charIndex++;
+        typingEl.textContent = txt.slice(0, charIndex);
+        if (charIndex >= txt.length) {
+            deleting = true;
+            setTimeout(typeLoop, 1200); // pause at end
+            return;
+        }
+    } else {
+        charIndex--;
+        typingEl.textContent = txt.slice(0, charIndex);
+        if (charIndex <= 0) {
+            deleting = false;
+            lineIndex = (lineIndex + 1) % typingLines.length;
+        }
+    }
+
+    var speed = deleting ? 70 : 90;
+    setTimeout(typeLoop, speed);
+}
+typeLoop();
+
+// ===== fake terminal =====
+var termForm = document.getElementById("terminal-form");
+var termInput = document.getElementById("terminal-input");
+var termOutput = document.getElementById("terminal-output");
+
+// simple commands map
+var cmdMap = {
+    help: [
+        "available commands:",
+        "  about      - short bio",
+        "  projects   - show main projects",
+        "  skills     - tech stack summary",
+        "  clear      - clear the screen"
+    ],
+    about: [
+        "Abhisar Ranger - cyber security enthusiast from India.",
+        "I like building recon tools, learning OSINT and writing small scripts."
+    ],
+    projects: [
+        "- Netherworld : advanced port scanner with GEO + OS info",
+        "- Redstrike   : CLI toolkit for recon & brute-force (still in progress)"
+    ],
+    skills: [
+        "Languages: Java, Python",
+        "Practices: Cyber Security, DSA, OSINT",
+        "Tools: Git, GitHub, Linux, IoT, etc."
+    ]
 };
 
-function printLine(text) {
-  const div = document.createElement("div");
-  div.textContent = text;
-  termOutput.appendChild(div);
-  termOutput.scrollTop = termOutput.scrollHeight;
+function printTermLine(text) {
+    var div = document.createElement("div");
+    div.textContent = text;
+    termOutput.appendChild(div);
+    termOutput.scrollTop = termOutput.scrollHeight;
 }
 
 if (termForm) {
-  termForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const value = termInput.value.trim();
-    if (!value) return;
-    printLine("> " + value);
-    const cmd = value.toLowerCase();
-    if (cmd === "clear") {
-      termOutput.innerHTML = "";
-    } else if (commands[cmd]) {
-      commands[cmd].forEach((line) => printLine(line));
-    } else {
-      printLine("command not found. type 'help' for options.");
-    }
-    termInput.value = "";
-  });
+    termForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var val = termInput.value.trim();
+        if (!val) return;
+
+        printTermLine("> " + val);
+        var cmd = val.toLowerCase();
+
+        if (cmd === "clear") {
+            termOutput.innerHTML = "";
+        } else if (cmdMap[cmd]) {
+            cmdMap[cmd].forEach(function (line) {
+                printTermLine(line);
+            });
+        } else {
+            printTermLine("command not found. type 'help' for options.");
+        }
+
+        termInput.value = "";
+    });
 }
 
-// BLOG POSTS (FRONTEND STATIC DATA) -------------------------------
-const blogGrid = document.getElementById("blog-grid");
-if (blogGrid) {
-  const posts = [
-    {
-      title: "Building Netherworld: Designing a Port Scanner",
-      excerpt:
-        "Thought process behind creating Netherworld, handling GEO lookup, and OS detection in one tool.",
-      tag: "Tooling",
-    },
-    {
-      title: "Redstrike: Planning a Cyber Toolkit",
-      excerpt:
-        "Notes on structuring offensive & defensive modules in a CLI-based security framework.",
-      tag: "Framework",
-    },
-    {
-      title: "OSINT Basics: First Steps",
-      excerpt:
-        "Collecting open-source intelligence using public data, search operators, and basic tooling.",
-      tag: "OSINT",
-    },
-  ];
-  posts.forEach((p) => {
-    const card = document.createElement("article");
-    card.className = "blog-card";
-    card.innerHTML = `
-      <h3>${p.title}</h3>
-      <p>${p.excerpt}</p>
-      <span class="tag">${p.tag}</span>
-    `;
-    blogGrid.appendChild(card);
-  });
+// ===== static blog cards (no backend) =====
+var blogContainer = document.getElementById("blog-grid");
+if (blogContainer) {
+    var blogPosts = [
+        {
+            title: "Building Netherworld (Port Scanner Idea)",
+            text: "How I thought about combining GEO lookup, OS detection and ports into one recon tool.",
+            tag: "Tooling"
+        },
+        {
+            title: "Redstrike - Notes on Design",
+            text: "Planning a simple CLI that has both offensive and defensive modules for learning.",
+            tag: "Framework"
+        },
+        {
+            title: "OSINT Basics for Beginners",
+            text: "Small notes on using search operators, public data and some tools for OSINT.",
+            tag: "OSINT"
+        }
+    ];
+
+    blogPosts.forEach(function (p) {
+        var card = document.createElement("article");
+        card.className = "blog-card";
+        card.innerHTML = "<h3>" + p.title + "</h3>" +
+            "<p>" + p.text + "</p>" +
+            "<span class='tag'>" + p.tag + "</span>";
+        blogContainer.appendChild(card);
+    });
 }
 
-// Typing animation ---------------------------------------
-const typingElement = document.getElementById("typing");
-const typingText = [
-  "Cybersecurity Enthusiast",
-  "Python & Java Developer",
-  "OSINT Learner",
-  "Security Tool Builder"
-];
-
-let typingIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function typeEffect() {
-  const currentText = typingText[typingIndex];
-
-  if (!deleting) {
-    typingElement.textContent = currentText.substring(0, charIndex++);
-    if (charIndex > currentText.length) {
-      deleting = true;
-      setTimeout(typeEffect, 1200);
-      return;
-    }
-  } else {
-    typingElement.textContent = currentText.substring(0, charIndex--);
-    if (charIndex < 0) {
-      deleting = false;
-      typingIndex = (typingIndex + 1) % typingText.length;
-    }
-  }
-  setTimeout(typeEffect, deleting ? 70 : 90);
-}
-
-typeEffect();
-
-
-// CONTACT FORM WITH EMAILJS ---------------------------------------
-const contactForm = document.querySelector(".contact-form");
+// ===== contact form with EmailJS =====
+var contactForm = document.querySelector(".contact-form");
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const nameField = contactForm.querySelector("input[placeholder='Your Name']");
-    const emailField = contactForm.querySelector("input[placeholder='Your Email']");
-    const messageField = contactForm.querySelector("textarea");
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    const params = {
-      from_name: nameField.value,
-      from_email: emailField.value,
-      message: messageField.value,
-    };
+        var nameInput = contactForm.querySelector("input[placeholder='Your Name']");
+        var emailInput = contactForm.querySelector("input[placeholder='Your Email']");
+        var msgInput = contactForm.querySelector("textarea");
 
-    if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
-      alert("EmailJS is not configured. Please add your IDs in script.js.");
-      return;
-    }
+        var params = {
+            from_name: nameInput.value,
+            from_email: emailInput.value,
+            message: msgInput.value
+        };
 
-    emailjs
-      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
-      .then(() => {
-        alert("Your message has been sent!");
-        contactForm.reset();
-      })
-      .catch((err) => {
-        console.error("EmailJS error:", err);
-        alert("Failed to send message. Please try again later.");
-      });
-  });
+        if (EMAILJS_PUBLIC_KEY === "YOUR_PUBLIC_KEY_HERE" ||
+            EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID_HERE") {
+            alert("EmailJS keys not set yet. Open script.js and put your keys at the top.");
+            return;
+        }
+
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+            .then(function () {
+                alert("Message sent! Thanks :)");
+                contactForm.reset();
+            })
+            .catch(function (err) {
+                console.log("EmailJS error:", err);
+                alert("Something went wrong, please try again later.");
+            });
+    });
 }
 
-// RESUME MODAL -----------------------------------------------------
-const resumeBtn = document.getElementById("resume-btn");
-const resumeModal = document.getElementById("resume-modal");
-const resumeClose = document.getElementById("resume-close");
+// ===== resume modal =====
+var resumeBtn = document.getElementById("resume-btn");
+var resumeModal = document.getElementById("resume-modal");
+var resumeClose = document.getElementById("resume-close");
 
 if (resumeBtn && resumeModal && resumeClose) {
-  resumeBtn.addEventListener("click", () => {
-    resumeModal.classList.add("show");
-  });
-  resumeClose.addEventListener("click", () => {
-    resumeModal.classList.remove("show");
-  });
-  resumeModal.addEventListener("click", (e) => {
-    if (e.target === resumeModal) resumeModal.classList.remove("show");
-  });
+    resumeBtn.addEventListener("click", function () {
+        resumeModal.classList.add("show");
+    });
+    resumeClose.addEventListener("click", function () {
+        resumeModal.classList.remove("show");
+    });
+    resumeModal.addEventListener("click", function (e) {
+        if (e.target === resumeModal) {
+            resumeModal.classList.remove("show");
+        }
+    });
 }
-
