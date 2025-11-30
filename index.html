@@ -1,315 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhisar Ranger — Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Abhisar Ranger - Cybersecurity Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Interactive Parallax Background -->
-  <div id="parallax-bg"></div>
+    <!-- background thing that moves with mouse -->
+    <div id="parallax-bg"></div>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">&lt; Abhisar Ranger /&gt;</div>
+    <!-- top navbar -->
+    <header class="navbar">
+        <div class="logo">&lt; Abhisar Ranger /&gt;</div>
 
-    <nav class="nav-links">
-      <a href="#summary">Summary</a>
-      <a href="#tech">Tech</a>
-      <a href="#projects">Projects</a>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#terminal">Terminal</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-    </nav>
+        <nav class="nav-links">
+            <a href="#summary">Summary</a>
+            <a href="#tech">Tech</a>
+            <a href="#projects">Projects</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#terminal">Terminal</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-    <button id="theme-toggle" class="toggle-btn" type="button">🌙</button>
-  </header>
+        <button id="theme-toggle" class="toggle-btn" type="button">🌙</button>
+    </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-text">
-     <h1>Hi all, I'm <span class="name">Abhisar</span></h1>
-<p id="typing" class="typing-line"></p>
-      <p class="subtitle">
-        Cyber Security Enthusiast 🛡️ &nbsp;||&nbsp; Developer 💻 &nbsp;||&nbsp; OSINT Learner 🔍
-      </p>
+    <!-- main hero / intro -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Hi all, I'm <span class="name">Abhisar</span></h1>
 
-      <div class="social-icons">
-        <a href="https://github.com/sketch-jpg" target="_blank" aria-label="GitHub">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub" />
-        </a>
-        <a href="https://linkedin.com/in/abhisarranger" target="_blank" aria-label="LinkedIn">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn" />
-        </a>
-        <a href="mailto:abhisarranger@gmail.com" aria-label="Email">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" alt="Email" />
-        </a>
-      </div>
+            <!-- typing line (js fills this) -->
+            <p id="typing" class="typing-line"></p>
 
-      <div class="hero-buttons">
-        <a href="#contact" class="btn primary">Contact Me</a>
-        <button class="btn alt" type="button" id="resume-btn">See My Resume</button>
-      </div>
+            <p class="subtitle">
+                Cyber Security Enthusiast 🛡️ || Developer 💻 || OSINT Learner 🔍
+            </p>
+
+            <div class="social-icons">
+                <a href="https://github.com/sketch-jpg" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub">
+                </a>
+                <a href="https://linkedin.com/in/abhisarranger" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="mailto:abhisarranger@gmail.com">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" alt="Email">
+                </a>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn primary">Contact Me</a>
+                <button id="resume-btn" class="btn alt" type="button">See My Resume</button>
+            </div>
+        </div>
+
+        <!-- simple hacker svg i made -->
+        <div class="hero-image">
+            <svg viewBox="0 0 400 400" aria-hidden="true">
+                <circle cx="200" cy="200" r="160" stroke="#4af59a44" stroke-width="3"/>
+                <path d="M130 250 Q200 310 270 250 L240 150 Q200 120 160 150 Z"
+                      fill="#0f172a" stroke="#4af59a" stroke-width="3"/>
+                <circle cx="200" cy="170" r="35" fill="#020617" stroke="#4af59a" stroke-width="3"/>
+                <rect x="170" y="160" width="60" height="18" rx="5" fill="#4af59a"/>
+                <rect x="150" y="245" width="100" height="50" rx="8"
+                      fill="#111829" stroke="#4af59a" stroke-width="2"/>
+                <text x="200" y="275" fill="#4af59a" font-size="16" text-anchor="middle">
+                    root@AR
+                </text>
+            </svg>
+        </div>
+    </section>
+
+    <main>
+        <!-- SUMMARY -->
+        <section id="summary" class="content-section reveal">
+            <h2>Summary</h2>
+            <p>
+                A Cyber Security enthusiast with beginner skills and the hunger to continue growing.
+                I like building small security tools, automating boring stuff and learning from CTFs.
+            </p>
+        </section>
+
+        <!-- TECH -->
+        <section id="tech" class="content-section reveal">
+            <h2>Technologies</h2>
+            <div class="tech-grid">
+                <div class="glass-card">
+                    <h3>Languages</h3>
+                    <p>Java, Python</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Practices</h3>
+                    <p>Cyber Security, DSA, Digital Marketing</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Tools & Platforms</h3>
+                    <p>Git, GitHub, Linux, IoT, Security</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="content-section reveal">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>Netherworld</h3>
+                    <p>
+                        Advanced port scanner for recon and information gathering. Combines OS detection,
+                        GEO location and port scanning into a single interface.
+                    </p>
+                    <ul>
+                        <li>Built with PyQt6</li>
+                        <li>Uses JSON APIs</li>
+                        <li>Focus on recon automation</li>
+                    </ul>
+                </article>
+
+                <article class="project-card">
+                    <h3>Redstrike</h3>
+                    <p>
+                        CLI security toolkit with basic offensive + defensive modules (work in progress).
+                    </p>
+                    <ul>
+                        <li>Port scanning features</li>
+                        <li>Bruteforce utilities</li>
+                        <li>Simple command-line UX</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- DASHBOARD (fake numbers, just for display) -->
+        <section id="dashboard" class="content-section reveal">
+            <h2>Security Dashboard (Demo)</h2>
+            <p class="section-sub">Just a visual idea of a threat monitoring panel.</p>
+
+            <div class="dashboard-grid">
+                <div class="metric-card">
+                    <span class="metric-label">Threats Blocked</span>
+                    <span class="metric-value" data-target="1243">0</span>
+                    <span class="metric-footnote">Last 24h</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Suspicious Logins</span>
+                    <span class="metric-value" data-target="87">0</span>
+                    <span class="metric-footnote">Geo anomalies</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Ports Scanned</span>
+                    <span class="metric-value" data-target="5432">0</span>
+                    <span class="metric-footnote">Recent scans</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Alerts in Queue</span>
+                    <span class="metric-value" data-target="16">0</span>
+                    <span class="metric-footnote">Need triage</span>
+                </div>
+            </div>
+
+            <div class="dash-mini-log">
+                <h3>Live Log (Fake but fun)</h3>
+                <ul id="log-list"></ul>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="content-section reveal">
+            <h2>Skill Matrix</h2>
+            <p class="section-sub">Rough idea of where I feel comfortable.</p>
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <span>Network Recon</span>
+                    <div class="skill-bar"><div class="fill level-80"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Python / Automation</span>
+                    <div class="skill-bar"><div class="fill level-75"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Linux</span>
+                    <div class="skill-bar"><div class="fill level-70"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>OSINT</span>
+                    <div class="skill-bar"><div class="fill level-65"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Web Security Basics</span>
+                    <div class="skill-bar"><div class="fill level-60"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TERMINAL -->
+        <section id="terminal" class="content-section reveal">
+            <h2>Interactive Terminal</h2>
+            <p class="section-sub">
+                Type <code>help</code> to see commands. Just a JS emulation of a shell.
+            </p>
+            <div class="terminal">
+                <div id="terminal-output" class="terminal-output">
+                    <div>&gt; welcome to <span class="accent">abhi-shell</span>. type <span class="accent">help</span> to begin.</div>
+                </div>
+                <form id="terminal-form" class="terminal-input-row" autocomplete="off">
+                    <span class="prompt">abhi@portfolio:~$</span>
+                    <input id="terminal-input" type="text">
+                </form>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="content-section reveal">
+            <h2>Education</h2>
+            <div class="edu-list">
+                <div class="edu-item">
+                    <h3>KR Mangalam University — MCA</h3>
+                    <span>2025 – 2027</span>
+                </div>
+                <div class="edu-item">
+                    <h3>Trinity Institute University — BCA</h3>
+                    <span>2022 – 2025</span>
+                </div>
+                <div class="edu-item">
+                    <h3>Pragati Public School — Class 12</h3>
+                    <span>2021 – 2022</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTS -->
+        <section id="certs" class="content-section reveal">
+            <h2>Certifications</h2>
+            <p class="section-sub">I’ll add official certs here as I pass them.</p>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3>Future Certification</h3>
+                    <p>Space reserved for upcoming cybersecurity certifications.</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Workshops / CTFs</h3>
+                    <p>Good place to show hands-on labs, bootcamps and CTFs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG (static list for now) -->
+        <section id="blog" class="content-section reveal">
+            <h2>Blog</h2>
+            <p class="section-sub">Some short writeups and notes.</p>
+            <div class="blog-grid" id="blog-grid">
+                <!-- script.js adds cards here -->
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section id="achievements" class="content-section reveal">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Organized a CTF (Capture the Flag) event at college.</li>
+            </ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="content-section reveal">
+            <h2>Contact</h2>
+            <p class="section-sub">Open for internships, collabs and bug bounty teams.</p>
+            <form class="contact-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <textarea rows="4" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+            <p class="small-note">
+                This uses EmailJS so the message goes straight to my inbox (no backend).
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Abhisar Ranger • Cybersecurity Portfolio</p>
+    </footer>
+
+    <!-- Resume modal -->
+    <div id="resume-modal" class="modal">
+        <div class="modal-content">
+            <button id="resume-close" class="modal-close" type="button">✕</button>
+            <h2>Resume</h2>
+            <p class="section-sub">You can swap this link with your real PDF.</p>
+            <a href="assets/abhisar_resume.pdf" download class="btn primary">Download Resume (PDF)</a>
+        </div>
     </div>
 
-    <!-- Hacker Illustration -->
-    <div class="hero-image">
-      <svg viewBox="0 0 400 400" aria-hidden="true">
-        <circle cx="200" cy="200" r="160" stroke="#4af59a44" stroke-width="3"/>
-        <path d="M130 250 Q200 310 270 250 L240 150 Q200 120 160 150 Z"
-              fill="#0f172a" stroke="#4af59a" stroke-width="3"/>
-        <circle cx="200" cy="170" r="35" fill="#020617" stroke="#4af59a" stroke-width="3"/>
-        <rect x="170" y="160" width="60" height="18" rx="5" fill="#4af59a"/>
-        <rect x="150" y="245" width="100" height="50" rx="8"
-              fill="#111829" stroke="#4af59a" stroke-width="2"/>
-        <text x="200" y="275" fill="#4af59a" font-size="16" text-anchor="middle">
-          root@AR
-        </text>
-      </svg>
-    </div>
-  </section>
-
-  <main>
-
-    <!-- SUMMARY -->
-    <section id="summary" class="content-section reveal">
-      <h2>Summary</h2>
-      <p>
-        A Cyber Security enthusiast with beginner skills and the hunger to continue growing.
-        Comfortable handling multiple tasks simultaneously and passionate about security tooling,
-        automation, and practical problem solving.
-      </p>
-    </section>
-
-    <!-- TECHNOLOGIES -->
-    <section id="tech" class="content-section reveal">
-      <h2>Technologies</h2>
-      <div class="tech-grid">
-        <div class="glass-card">
-          <h3>Languages</h3>
-          <p>Java, Python</p>
-        </div>
-        <div class="glass-card">
-          <h3>Practices</h3>
-          <p>Cyber Security, DSA, Digital Marketing</p>
-        </div>
-        <div class="glass-card">
-          <h3>Tools & Platforms</h3>
-          <p>Git, GitHub, Linux, IoT, Security</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="content-section reveal">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Netherworld</h3>
-          <p>
-            Advanced port scanner for recon and information gathering. Combines OS detection,
-            GEO location and port scanning into a single interface.
-          </p>
-          <ul>
-            <li>Built with PyQt6 desktop UI</li>
-            <li>JSON-based API integration</li>
-            <li>Recon & automation focused</li>
-          </ul>
-        </article>
-
-        <article class="project-card">
-          <h3>Redstrike</h3>
-          <p>
-            Intermediate cybersecurity toolkit for both offensive and defensive use cases. Focused
-            on simplicity and CLI-driven workflows.
-          </p>
-          <ul>
-            <li>Port scanning & brute-force modules</li>
-            <li>Modular design for future expansion</li>
-            <li>Currently CLI only (TUI planned)</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- CYBER DASHBOARD -->
-    <section id="dashboard" class="content-section reveal">
-      <h2>Security Dashboard (Demo)</h2>
-      <p class="section-sub">
-        A simulated dashboard showing what a unified threat-monitoring panel might look like.
-      </p>
-      <div class="dashboard-grid">
-        <div class="metric-card">
-          <span class="metric-label">Threats Blocked</span>
-          <span class="metric-value" data-target="1243">0</span>
-          <span class="metric-footnote">Last 24 hours</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Suspicious Logins</span>
-          <span class="metric-value" data-target="87">0</span>
-          <span class="metric-footnote">Geo-anomaly flagged</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Open Ports Scanned</span>
-          <span class="metric-value" data-target="5432">0</span>
-          <span class="metric-footnote">Across recent targets</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-label">Alerts in Queue</span>
-          <span class="metric-value" data-target="16">0</span>
-          <span class="metric-footnote">Awaiting triage</span>
-        </div>
-      </div>
-      <div class="dash-mini-log">
-        <h3>Live Log (Simulated)</h3>
-        <ul id="log-list"></ul>
-      </div>
-    </section>
-
-    <!-- SKILL MATRIX -->
-    <section id="skills" class="content-section reveal">
-      <h2>Skill Matrix</h2>
-      <p class="section-sub">A quick view of relative comfort levels across domains.</p>
-      <div class="skill-grid">
-        <div class="skill-item">
-          <span>Network Recon</span>
-          <div class="skill-bar"><div class="fill level-80"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Python / Automation</span>
-          <div class="skill-bar"><div class="fill level-75"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Linux</span>
-          <div class="skill-bar"><div class="fill level-70"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>OSINT</span>
-          <div class="skill-bar"><div class="fill level-65"></div></div>
-        </div>
-        <div class="skill-item">
-          <span>Web Security Basics</span>
-          <div class="skill-bar"><div class="fill level-60"></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TERMINAL SECTION -->
-    <section id="terminal" class="content-section reveal">
-      <h2>Interactive Terminal</h2>
-      <p class="section-sub">
-        Type <code>help</code> to see available commands. This is a frontend simulation of a security CLI.
-      </p>
-      <div class="terminal">
-        <div id="terminal-output" class="terminal-output">
-          <div>&gt; welcome to <span class="accent">abhi-shell</span>. type <span class="accent">help</span> to begin.</div>
-        </div>
-        <form id="terminal-form" class="terminal-input-row" autocomplete="off">
-          <span class="prompt">abhi@portfolio:~$</span>
-          <input id="terminal-input" type="text" />
-        </form>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="content-section reveal">
-      <h2>Education</h2>
-      <div class="edu-list">
-        <div class="edu-item">
-          <h3>KR Mangalam University — MCA</h3>
-          <span>2025 – 2027</span>
-        </div>
-        <div class="edu-item">
-          <h3>Trinity Institute University — BCA</h3>
-          <span>2022 – 2025</span>
-        </div>
-        <div class="edu-item">
-          <h3>Pragati Public School — Class 12</h3>
-          <span>2021 – 2022</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section id="certs" class="content-section reveal">
-      <h2>Certifications</h2>
-      <p class="section-sub">
-        Add security certifications (like Google Cybersecurity, CEH, Security+, etc.) here when available.
-      </p>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <h3>Future Certification</h3>
-          <p>Space reserved for upcoming cybersecurity certifications.</p>
-        </div>
-        <div class="cert-card">
-          <h3>Workshop / CTF</h3>
-          <p>Use this area to highlight important hands-on training or CTF wins.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG -->
-    <section id="blog" class="content-section reveal">
-      <h2>Blog</h2>
-      <p class="section-sub">
-        Short write-ups about tools, learning notes and experiments.
-      </p>
-      <div class="blog-grid" id="blog-grid">
-        <!-- Filled by script.js -->
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS -->
-    <section id="achievements" class="content-section reveal">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Organized a CTF (Capture the Flag) event at college.</li>
-      </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="content-section reveal">
-      <h2>Contact</h2>
-      <p class="section-sub">Interested in internships, collaboration or bug bounty teams? Reach out.</p>
-      <form class="contact-form">
-        <div class="form-row">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-        </div>
-        <textarea rows="4" placeholder="Your Message"></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
-      <p class="small-note">
-        This form uses EmailJS to send messages directly to your inbox — no backend required.
-      </p>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2025 Abhisar Ranger • Cybersecurity Portfolio</p>
-  </footer>
-
-  <!-- RESUME MODAL -->
-  <div id="resume-modal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" id="resume-close" type="button">✕</button>
-      <h2>Resume</h2>
-      <p class="section-sub">Link or embed your PDF resume here.</p>
-      <a href="assets/abhisar_resume.pdf" download class="btn primary">
-  Download Resume (PDF)
-</a>
-
-    </div>
-  </div>
-
-  <!-- EmailJS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <!-- Main script -->
-  <script src="script.js"></script>
+    <!-- EmailJS from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- my script -->
+    <script src="script.js"></script>
 </body>
 </html>
-
