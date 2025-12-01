@@ -1,7 +1,7 @@
 // ===== EmailJS stuff (put your keys here) =====
-var EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY_HERE";   // e.g. "cF3p9x..."
-var EMAILJS_SERVICE_ID = "service_mhqbdiqro";      // you said this in chat
-var EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID_HERE"; // from EmailJS template
+var EMAILJS_PUBLIC_KEY = "WiZ9kfCMjXubU-hBb";   // e.g. "cF3p9x..."
+var EMAILJS_SERVICE_ID = "service_mhqbdiq";      // you said this in chat
+var EMAILJS_TEMPLATE_ID = "template_3o5e5jh"; // from EmailJS template
 
 if (typeof emailjs !== "undefined" && EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY_HERE") {
     emailjs.init(EMAILJS_PUBLIC_KEY);
