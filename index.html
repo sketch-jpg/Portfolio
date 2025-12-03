@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <title>Abhisar Ranger - Cybersecurity Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- main css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- background thing that moves with mouse -->
     <div id="parallax-bg"></div>
-
-    <!-- top navbar -->
     <header class="navbar">
         <div class="logo">&lt; Abhisar Ranger /&gt;</div>
-
         <nav class="nav-links">
             <a href="#summary">Summary</a>
             <a href="#tech">Tech</a>
@@ -25,22 +19,16 @@
             <a href="#blog">Blog</a>
             <a href="#contact">Contact</a>
         </nav>
-
         <button id="theme-toggle" class="toggle-btn" type="button">🌙</button>
     </header>
-
-    <!-- main hero / intro -->
     <section class="hero">
         <div class="hero-text">
             <h1>Hi all, I'm <span class="name">Abhisar</span></h1>
-
-            <!-- typing line (js fills this) -->
             <p id="typing" class="typing-line"></p>
 
             <p class="subtitle">
                 Cyber Security Enthusiast 🛡️ || Developer 💻 || OSINT Learner 🔍
             </p>
-
             <div class="social-icons">
                 <a href="https://github.com/sketch-jpg" target="_blank">
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub">
@@ -52,14 +40,11 @@
                     <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" alt="Email">
                 </a>
             </div>
-
             <div class="hero-buttons">
                 <a href="#contact" class="btn primary">Contact Me</a>
                 <button id="resume-btn" class="btn alt" type="button">See My Resume</button>
             </div>
         </div>
-
-        <!-- simple hacker svg i made -->
         <div class="hero-image">
             <svg viewBox="0 0 400 400" aria-hidden="true">
                 <circle cx="200" cy="200" r="160" stroke="#4af59a44" stroke-width="3"/>
@@ -75,9 +60,7 @@
             </svg>
         </div>
     </section>
-
     <main>
-        <!-- SUMMARY -->
         <section id="summary" class="content-section reveal">
             <h2>Summary</h2>
             <p>
@@ -85,8 +68,6 @@
                 I like building small security tools, automating boring stuff and learning from CTFs.
             </p>
         </section>
-
-        <!-- TECH -->
         <section id="tech" class="content-section reveal">
             <h2>Technologies</h2>
             <div class="tech-grid">
@@ -104,8 +85,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- PROJECTS -->
         <section id="projects" class="content-section reveal">
             <h2>Projects</h2>
             <div class="project-grid">
@@ -121,7 +100,6 @@
                         <li>Focus on recon automation</li>
                     </ul>
                 </article>
-
                 <article class="project-card">
                     <h3>Redstrike</h3>
                     <p>
@@ -135,8 +113,6 @@
                 </article>
             </div>
         </section>
-
-        <!-- DASHBOARD (fake numbers, just for display) -->
         <section id="dashboard" class="content-section reveal">
             <h2>Security Dashboard (Demo)</h2>
             <p class="section-sub">Just a visual idea of a threat monitoring panel.</p>
@@ -169,8 +145,6 @@
                 <ul id="log-list"></ul>
             </div>
         </section>
-
-        <!-- SKILLS -->
         <section id="skills" class="content-section reveal">
             <h2>Skill Matrix</h2>
             <p class="section-sub">Rough idea of where I feel comfortable.</p>
@@ -197,8 +171,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- TERMINAL -->
         <section id="terminal" class="content-section reveal">
             <h2>Interactive Terminal</h2>
             <p class="section-sub">
@@ -214,8 +186,6 @@
                 </form>
             </div>
         </section>
-
-        <!-- EDUCATION -->
         <section id="education" class="content-section reveal">
             <h2>Education</h2>
             <div class="edu-list">
@@ -233,8 +203,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- CERTS -->
         <section id="certs" class="content-section reveal">
             <h2>Certifications</h2>
             <p class="section-sub">I’ll add official certs here as I pass them.</p>
@@ -249,8 +217,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- BLOG (static list for now) -->
         <section id="blog" class="content-section reveal">
             <h2>Blog</h2>
             <p class="section-sub">Some short writeups and notes.</p>
@@ -258,16 +224,12 @@
                 <!-- script.js adds cards here -->
             </div>
         </section>
-
-        <!-- ACHIEVEMENTS -->
         <section id="achievements" class="content-section reveal">
             <h2>Achievements</h2>
             <ul>
                 <li>Organized a CTF (Capture the Flag) event at college.</li>
             </ul>
         </section>
-
-        <!-- CONTACT -->
         <section id="contact" class="content-section reveal">
             <h2>Contact</h2>
             <p class="section-sub">Open for internships, collabs and bug bounty teams.</p>
@@ -279,29 +241,21 @@
                 <textarea rows="4" placeholder="Your Message"></textarea>
                 <button type="submit" class="btn primary">Send Message</button>
             </form>
-            <p class="small-note">
-                This uses EmailJS so the message goes straight to my inbox (no backend).
-            </p>
         </section>
     </main>
 
     <footer class="footer">
         <p>© 2025 Abhisar Ranger • Cybersecurity Portfolio</p>
     </footer>
-
-    <!-- Resume modal -->
     <div id="resume-modal" class="modal">
         <div class="modal-content">
             <button id="resume-close" class="modal-close" type="button">✕</button>
             <h2>Resume</h2>
-            <p class="section-sub">You can swap this link with your real PDF.</p>
+            <p class="section-sub"></p>
             <a href="assets/abhisar_resume.pdf" download class="btn primary">Download Resume (PDF)</a>
         </div>
     </div>
-
-    <!-- EmailJS from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <!-- my script -->
     <script src="script.js"></script>
 </body>
 </html>
