@@ -23,17 +23,7 @@ body.light-mode {
   color: #111827;
 }
 
-/* blurry blobs in background */
-#parallax-bg {
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 15% 20%, #0f766e, transparent 60%),
-    radial-gradient(circle at 80% 80%, #1d4ed8, transparent 55%);
-  filter: blur(70px);
-  z-index: -1;
-  transition: transform 0.15s;
-}
+
 
 /* navbar stuff */
 .navbar {
